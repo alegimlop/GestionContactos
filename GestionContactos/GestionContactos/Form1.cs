@@ -81,5 +81,37 @@ namespace GestionContactos
                 MessageBox.Show("No se ha podido añadir el contacto porque el contacto ya existe o no hay más huecos en los contactos.");
             }
         }
+
+        void ElimContacto(string [] telef ,string[] vecNombre , string nom)
+        {
+            int cont = 0;
+            bool encontrado = false;
+
+            while (cont < vecNombre.Length && !encontrado)
+            {
+                if (nom == vecNombre[cont])
+                {
+                    vecNombre[cont] = null;
+                    telef[cont] = null;
+                    encontrado = true;
+
+                    MessageBox.Show("El contacto ha sido eliminado con éxito.");
+                }
+
+                cont++;
+            }
+
+            if (!encontrado)
+            {
+                MessageBox.Show("El contacto no se encuentra en la agenda.");
+            }
+        }
+
+        private void btnEliminarContacto_Click(object sender, EventArgs e)
+        {
+            string nom = Interaction.InputBox("Introduce el nombre del contacto que desea eliminar:");
+
+            ElimContacto(telef, nombre, nom);
+        }
     }
 }

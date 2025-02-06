@@ -61,6 +61,7 @@
             btnEliminarContacto.TabIndex = 2;
             btnEliminarContacto.Text = "Eliminar contacto";
             btnEliminarContacto.UseVisualStyleBackColor = true;
+            btnEliminarContacto.Click += btnEliminarContacto_Click;
             // 
             // btnMostarContacto
             // 
