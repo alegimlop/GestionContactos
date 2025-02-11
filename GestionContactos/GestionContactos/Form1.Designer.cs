@@ -52,6 +52,7 @@
             btnModificarContacto.TabIndex = 1;
             btnModificarContacto.Text = "Modificar contacto";
             btnModificarContacto.UseVisualStyleBackColor = true;
+            btnModificarContacto.Click += btnModificarContacto_Click;
             // 
             // btnEliminarContacto
             // 

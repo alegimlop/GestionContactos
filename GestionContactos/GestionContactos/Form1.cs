@@ -82,7 +82,7 @@ namespace GestionContactos
             }
         }
 
-        void ElimContacto(string [] telef ,string[] vecNombre , string nom)
+        void ElimContacto(string[] telef, string[] vecNombre, string nom)
         {
             int cont = 0;
             bool encontrado = false;
@@ -112,6 +112,32 @@ namespace GestionContactos
             string nom = Interaction.InputBox("Introduce el nombre del contacto que desea eliminar:");
 
             ElimContacto(telef, nombre, nom);
+        }
+
+        void modificarContacto(string[] vecNombre, string[] telefono, string nom)
+        {
+            int cont = 0;
+            bool encontrado = false;
+
+            while (cont < vecNombre.Length && !encontrado)
+            {
+                if (nom == vecNombre[cont])
+                {
+                    telef[cont] = Interaction.InputBox("Introduce un nuevo teléfono para el contacto:");                    
+                    encontrado = true;
+                    MessageBox.Show("El contacto ha sido modificado con éxito.");
+                }
+                cont++;
+            }
+            if (!encontrado)
+            {
+                MessageBox.Show("El contacto no se encuentra en la agenda.");
+            }
+        }
+        private void btnModificarContacto_Click(object sender, EventArgs e)
+        {
+            string nom = Interaction.InputBox("Introduce el nombre del contacto del cual desea modificar el teléfono:");
+            modificarContacto(nombre, telef, nom);
         }
     }
 }
