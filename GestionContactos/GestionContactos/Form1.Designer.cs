@@ -72,6 +72,7 @@
             btnMostarContacto.TabIndex = 3;
             btnMostarContacto.Text = "Mostar contacto";
             btnMostarContacto.UseVisualStyleBackColor = true;
+            btnMostarContacto.Click += btnMostarContacto_Click;
             // 
             // Form1
             // 

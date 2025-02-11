@@ -1,4 +1,5 @@
 using Microsoft.VisualBasic;
+using System.Numerics;
 using static System.Runtime.InteropServices.JavaScript.JSType;
 
 namespace GestionContactos
@@ -123,7 +124,7 @@ namespace GestionContactos
             {
                 if (nom == vecNombre[cont])
                 {
-                    telef[cont] = Interaction.InputBox("Introduce un nuevo teléfono para el contacto:");                    
+                    telef[cont] = Interaction.InputBox("Introduce un nuevo teléfono para el contacto:");
                     encontrado = true;
                     MessageBox.Show("El contacto ha sido modificado con éxito.");
                 }
@@ -138,6 +139,22 @@ namespace GestionContactos
         {
             string nom = Interaction.InputBox("Introduce el nombre del contacto del cual desea modificar el teléfono:");
             modificarContacto(nombre, telef, nom);
+        }
+
+        public string MostrarVector(string[] nom , string[] telef)
+        {
+            string texto = "";
+            for (int i = 0; i < TAM; i++)
+            {
+                texto += nom[i] + " " + telef[i] + "\n";
+            }
+            return texto;
+        }
+
+        private void btnMostarContacto_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Contactos de la Agenda \n" + (MostrarVector(nombre, telef)));
+
         }
     }
 }
